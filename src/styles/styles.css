@@ -1,0 +1,156 @@
+.app {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    max-width: 80rem;
+}
+
+.app-header {
+    height: 18vh;
+    color: #eaeaea;
+}
+
+.logo {
+    height: 4rem;
+}
+
+.search {
+    height: 16vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-bottom: 2rem;
+}
+
+.search-input {
+    box-sizing: border-box;
+    border-color: hsl(0, 0%, 80%);
+    border-radius: 0.4rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    flex-shrink: 1;
+}
+
+.launches {
+    height: 56vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.launch {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    transition: background-color 0.3s linear;
+}
+
+.launch:hover {
+    background-color: #eaeaea;
+}
+
+.launch-details {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+
+.launch-image {
+    width: 20rem;
+    height: 12rem;
+}
+
+.launch-date {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.launch-link {
+    font-size: 1rem;
+}
+
+.launch-message {
+    color: #eaeaea;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.launch-mission {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.launch-rocket {
+    font-size: 1.6rem;
+}
+
+.loader {
+    animation: 2s linear infinite svg-animation;
+    max-width: 100px;
+    width: 5rem;
+}
+
+.loader-circle {
+    animation: 1.4s ease-in-out infinite both circle-animation;
+    display: block;
+    fill: transparent;
+    stroke: #eaeaea;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 280;
+    stroke-width: 10px;
+    transform-origin: 50% 50%;
+}
+
+@keyframes svg-animation {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes circle-animation {
+    0%,
+    25% {
+        stroke-dashoffset: 280;
+        transform: rotate(0);
+    }
+
+    50%,
+    75% {
+        stroke-dashoffset: 75;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        stroke-dashoffset: 280;
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .app-header {
+        height: 10rem;
+    }
+
+    .search {
+        flex-direction: row;
+        height: 3.7rem;
+    }
+    .search-input {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .search-year {
+        width: 30%;
+    }
+
+    .launches {
+        height: 80vh;
+    }
+}
